@@ -1,6 +1,5 @@
 import React from 'react';
 import Navigation from './common/navbar';
-import LoginSignup from './Pages/LoginSignup'
 import './App.css';
 
 function App() {

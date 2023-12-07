@@ -20,7 +20,7 @@ function sideMenu(side) {
   return (
     <nav>
       <div className="logo">
-        <img height="200px" width="200px" src="/images/BOOKNOOKlogo-removebg-preview.png" alt="logo" />
+        <img height="200px" width="2000px" src="/images/BOOKNOOKlogo-removebg-preview.png" alt="logo" />
       </div>
     
     
