@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import Navigation from './common/navbar';
+import LoginSignup from './Pages/LoginSignup'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation/>
+    <div className="app-container" scrolling="no">
+    <div class="head-container">
+				<div class="quote">
+   <p> Connecting readers with the treasures of knowledge – because every book has a story, and every story has a reader.</p>
+   <h4>Where Words Dance and Imagination Takes Flight.</h4>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }
