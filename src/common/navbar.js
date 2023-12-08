@@ -39,8 +39,8 @@ const Navigation = () => {
           <ul>
           <li><Link to="/Home">Home</Link></li><br/>
             <li><Link to="/BooksPage">Books</Link></li><br/>
-            <li><Link to="/MembersPage">Members</Link></li><br/>
-            <li><Link to="/StaffPage">Staff</Link></li>
+            {/* <li><Link to="/MembersPage">Members</Link></li><br/>
+            <li><Link to="/StaffPage">Staff</Link></li> */}
           </ul>
 
           

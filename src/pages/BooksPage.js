@@ -37,7 +37,7 @@ function BooksPage() {
 
   function handleBookSubmit() {
     if (updateBookId) {
-      fetch(`http://localhost:3000/updateBook/${updateBookId}`, {
+      fetch(`http://localhost:4000/updateBook/${updateBookId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ function BooksPage() {
           console.error("Error updating book:", error);
         });
     } else {
-      fetch("http://localhost:3000/addBook", {
+      fetch("http://localhost:4000/addBook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +82,7 @@ function BooksPage() {
   };
 
   const fetchBooks = () => {
-    fetch("http://localhost:3000/BooksPage")
+    fetch("http://localhost:4000/")
       .then((response) => response.json())
       .then((data) => {
         setBooks(data);
@@ -93,7 +93,7 @@ function BooksPage() {
   };
 
   const handleDeleteBook = (bookId) => {
-    fetch(`http://localhost:3000/deleteBook/${bookId}`, {
+    fetch(`http://localhost:4000/deleteBook/${bookId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -125,13 +125,14 @@ function BooksPage() {
   }, []);
 
   return (
-    <div className="pets-container mx-auto"><br></br>
+    <div><br></br>
       <h1 className="text-center">
         Books Available at the Library
         <br/><br/>
         <Button variant="primary" onClick={handleAddBook}>
           Add Book
         </Button>
+        <br></br><br></br>
       </h1>
 
       <Row xs={1} md={4} className="g-4">

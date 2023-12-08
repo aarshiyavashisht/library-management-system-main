@@ -6,11 +6,10 @@ var connection = require("./database");
 
 app.use(cors());
 
-// Middleware to parse JSON in the request body
 app.use(express.json());
 
 // Get all books
-app.get("/books", function (req, res) {
+app.get("/", function (req, res) {
   let sql = "SELECT * FROM books";
   connection.query(sql, function (err, results) {
     res.send(results);
@@ -77,8 +76,8 @@ app.put("/updateBook/:id", function (req, res) {
   );
 });
 
-app.listen(3000, function () {
-  console.log("App Listening on port 3000");
+app.listen(4000, function () {
+  console.log("App Listening on port 4000");
   connection.connect(function (err) {
     if (err) throw err;
     console.log("Database Connected");

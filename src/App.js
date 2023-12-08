@@ -3,8 +3,8 @@ import React from "react";
 import Navigation from "./common/navbar";
 import Home from "./pages/Home";
 import BooksPage from "./pages/BooksPage";
-import MembersPage from "./pages/MembersPage";
-import StaffPage from "./pages/StaffPage";
+// import MembersPage from "./pages/MembersPage";
+// import StaffPage from "./pages/StaffPage";
 import Login from "./pages/Login";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
@@ -18,10 +18,11 @@ function App() {
           <Navigation />
 
           <Routes>
+          <Route exact path="/" element={<Home/> } />
           <Route exact path="/Home" element={<Home/> } />
           <Route path="/BooksPage" element={<BooksPage/>} />
-          <Route path="/MembersPage" element={<MembersPage/> } />
-          <Route path="/StaffPage" element={<StaffPage/>} />
+          {/* <Route path="/MembersPage" element={<MembersPage/> } />
+          <Route path="/StaffPage" element={<StaffPage/>} /> */}
           <Route path="/Login" element={<Login/>}/>
         </Routes>  
 
