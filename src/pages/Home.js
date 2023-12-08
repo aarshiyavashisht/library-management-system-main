@@ -1,9 +1,13 @@
 import React from 'react';
 import "./landing.css";
+import Navigation from '../common/navbar';
 
 function Home() {
     return (
+      <div>
+        <Navigation />
        <div className="app-container" scrolling="no">
+        
             <div class="head-container">
               <div class="quote">
                 <p>
@@ -15,6 +19,8 @@ function Home() {
               </div>
             </div>
           </div>
+          </div>
+
     );
   }
   

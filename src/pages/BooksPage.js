@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Col, Row, Button, Modal, Form } from 'react-bootstrap';
-
+import Navigation from "../common/navbar";
 function BooksPage() {
   const [books, setBooks] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -125,7 +125,10 @@ function BooksPage() {
   }, []);
 
   return (
-    <div><br></br>
+    <div>
+              <Navigation />
+
+      <br></br>
       <h1 className="text-center">
         Books Available at the Library
         <br/><br/>
@@ -250,3 +253,6 @@ function BooksPage() {
 }
 
 export default BooksPage;
+
+
+

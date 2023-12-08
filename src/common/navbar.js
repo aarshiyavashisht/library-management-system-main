@@ -14,16 +14,7 @@ function sideMenu(side) {
 }
 
 const Navigation = () => {
-  const openLoginPage = () => {
-    const popupWindow = window.open(
-      "popup.html",
-      "loginPage",
-      "width=600,height=400"
-    );
-    if (popupWindow) {
-      popupWindow.focus();
-    }
-  };
+ 
 
   return (
         <nav>
@@ -38,20 +29,19 @@ const Navigation = () => {
 
           <ul>
           <li><Link to="/Home">Home</Link></li><br/>
-            <li><Link to="/BooksPage">Books</Link></li><br/>
-            {/* <li><Link to="/MembersPage">Members</Link></li><br/>
-            <li><Link to="/StaffPage">Staff</Link></li> */}
+          <li><Link to="/BooksPage">Books</Link></li><br/>
           </ul>
 
-          
-
+        
           <Link to="/login" className="get-started" >Get Started</Link>
           <img src="images/icon/menu.png" className="menu" onClick={() => sideMenu(0)} alt="menu" />
         </nav>
-
-        
+  
    
   );
 };
 
 export default Navigation;
+
+
+
