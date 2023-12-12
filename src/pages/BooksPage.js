@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Col, Row, Button, Modal, Form } from 'react-bootstrap';
 import Navigation from "../common/navbar";
+
+
 function BooksPage() {
   const [books, setBooks] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -14,14 +16,20 @@ function BooksPage() {
   });
   const [updateBookId, setUpdateBookId] = useState(null);
 
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setBookData({ ...bookData, [name]: value });
   };
 
+
+
   const handleAddBook = () => {
     setShowModal(true);
   };
+
+
 
   const handleModalClose = () => {
     setShowModal(false);
@@ -34,6 +42,8 @@ function BooksPage() {
       genre: "",
     });
   };
+
+
 
   function handleBookSubmit() {
     if (updateBookId) {
@@ -69,7 +79,6 @@ function BooksPage() {
           console.error("Error adding book:", error);
         });
     }
-
     setBookData({
       title: "",
       author: "",
@@ -81,6 +90,9 @@ function BooksPage() {
     handleModalClose();
   };
 
+
+
+
   const fetchBooks = () => {
     fetch("http://localhost:4000/")
       .then((response) => response.json())
@@ -91,6 +103,8 @@ function BooksPage() {
         console.error("Error fetching books:", error);
       });
   };
+
+
 
   const handleDeleteBook = (bookId) => {
     fetch(`http://localhost:4000/deleteBook/${bookId}`, {
@@ -106,6 +120,8 @@ function BooksPage() {
       });
   };
 
+
+
   const handleUpdateBook = (book) => {
     setBookData({
       title: book.title,
@@ -116,18 +132,18 @@ function BooksPage() {
     });
 
     setUpdateBookId(book.book_id);
-
     setShowModal(true);
   };
+
 
   useEffect(() => {
     fetchBooks();
   }, []);
 
+
   return (
     <div>
-              <Navigation />
-
+       <Navigation />
       <br></br>
       <h1 className="text-center">
         Books Available at the Library
@@ -138,12 +154,13 @@ function BooksPage() {
         <br></br><br></br>
       </h1>
 
+
       <Row xs={1} md={4} className="g-4">
         {books.map((book) => (
           <Col key={book.book_id}>
             <Card
               className="custom-card mb-3"
-              style={{ border: "3px solid lightblue" }}
+              style={{ border: "3px solid purple" }}
             >
               <Card.Body>
                 <Card.Title>{book.title}</Card.Title>
@@ -152,7 +169,7 @@ function BooksPage() {
                 <Card.Text>Quantity: {book.quantity}</Card.Text>
                 <Card.Text>Genre: {book.genre}</Card.Text>
                 <Button
-                  variant="danger"
+                  variant="secondary"
                   onClick={() => handleDeleteBook(book.book_id)}
                   className="Crud-btn"
                 >

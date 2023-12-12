@@ -16,6 +16,8 @@ app.get("/", function (req, res) {
   });
 });
 
+
+
 // Add a new book
 app.post("/addBook", function (req, res) {
   const formData = req.body;
@@ -33,7 +35,10 @@ app.post("/addBook", function (req, res) {
       res.status(200).json({ success: true });
     }
   });
-});
+}); 
+
+
+
 
 app.delete("/deleteBook/:id", function (req, res) {
   const bookId = req.params.id;
@@ -52,6 +57,9 @@ app.delete("/deleteBook/:id", function (req, res) {
     }
   });
 });
+
+
+
 
 app.put("/updateBook/:id", function (req, res) {
   const bookId = req.params.id;
@@ -75,6 +83,9 @@ app.put("/updateBook/:id", function (req, res) {
     }
   );
 });
+
+
+
 
 app.listen(4000, function () {
   console.log("App Listening on port 4000");
